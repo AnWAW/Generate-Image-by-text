@@ -1,0 +1,230 @@
+:root {
+  /* color */
+  --text-dark-blue: #161f29;
+  --text-yellow-light: #fff8e9;
+  --text-grey: #b8b6b2;
+  --text-emeral: #4bb6ba;
+
+  /* font size */
+  --textFontSize1: 2.5rem;
+  --textFontSize2: 1.25rem;
+  --textFontSize3: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: var(--text-grey);
+}
+
+.image-generation {
+  display: flex;
+  background-image: url(./image/background.jpg);
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  position: relative;
+}
+
+/* .image-generation::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--text-dark-blue);
+  position: absolute;
+  opacity: 0.2;
+} */
+
+.image-generation .content {
+  color: var(--text-yellow-light);
+  padding: 0 15px;
+  max-width: 760px;
+  text-align: center;
+}
+
+.image-generation h1 {
+  font-weight: 700;
+
+  font-size: var(--textFontSize1);
+}
+
+.image-generation p {
+  font-size: var(--textFontSize2);
+  padding-block: 0 2px;
+}
+
+.image-generation .generate-form {
+  /* display: flex;
+  align-items: center; */
+  height: 56px;
+  width: 100%;
+  background: white;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 10px;
+}
+
+.generate-form .prompt-input {
+  width: 100%;
+  height: 100%;
+  font-size: var(--textFontSize3);
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.generate-form .controls {
+  display: flex;
+  gap: 15px;
+}
+
+.generate-form .img-quantity {
+  outline: none;
+  border: none;
+  background: none;
+  font-size: var(--textFontSize3);
+}
+
+.generate-form .generate-btn {
+  outline: none;
+  border: none;
+  font-size: var(--textFontSize3);
+  color: white;
+  font-weight: 500;
+  background: var(--text-emeral);
+  border-radius: 30px;
+  padding: 0 25px;
+  padding-block: 10px;
+  cursor: pointer;
+}
+
+.image-gallery {
+  display: flex;
+  gap: 15px;
+  padding: 0 15px;
+  margin: 50px 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.image-gallery .image-card {
+  /* display: block; */
+  width: 285px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-gallery .image-card.loading img {
+  height: 80px;
+  width: 80px;
+}
+
+.image-gallery .image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-gallery .image-card .download-btn {
+  right: 15px;
+  bottom: 15px;
+  position: absolute;
+  height: 36px;
+  width: 36px;
+  background: var(--text-yellow-light);
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-gallery .image-card .share-btn {
+  left: 15px;
+  bottom: 15px;
+  position: absolute;
+  height: 36px;
+  width: 36px;
+  background: var(--text-yellow-light);
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-gallery .image-card:is(:hover, :focus-visible):not(.loading) .share-btn {
+  display: flex;
+}
+
+.image-gallery
+  .image-card.image-card:is(:hover, :focus-visible):not(.loading)
+  .download-btn {
+  display: flex;
+}
+
+ion-icon {
+  font-size: var(--textFontSize2);
+  color: var(--text-dark-blue);
+}
+
+@media screen and (max-width: 760px) {
+  .image-generation h1 {
+    font-size: 1.8rem;
+  }
+
+  .image-generation p {
+    font-size: 1rem;
+  }
+
+  .image-generation .generate-form {
+    display: block;
+    /* margin-top: 32px; */
+    height: 40px;
+  }
+
+  .generate-form .controls {
+    height: 33px;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .generate-form .img-quantity {
+    color: var(--text-yellow-light);
+    /* background-color: var(--text-dark-blue); */
+    background: var(--text-emeral);
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+  }
+
+  .generate-form .img-quantity option {
+    color: var(--text-yellow-light);
+  }
+
+  .generate-form .generate-btn {
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .image-gallery .image-card:not(.loading) .share-btn {
+    display: flex;
+  }
+
+  .image-gallery .image-card.image-card:not(.loading) .download-btn {
+    display: flex;
+  }
+}
